@@ -22,6 +22,8 @@
 					<MainPath>./index.html</MainPath>
 					<ScriptPath>./jsx/Photoshop.jsx</ScriptPath>
 					<CEFCommandLine>
+						<Parameter>--allow-file-access</Parameter>
+						<Parameter>--allow-file-access-from-files</Parameter>
 						<Parameter>--enable-speech-input</Parameter>
 						<Parameter>--enable-media-stream</Parameter>
 						<Parameter>--enable-nodejs</Parameter>
