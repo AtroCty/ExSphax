@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "out": "./lib", 
+        "sourceMap": true, 
+        "target": "es5"
+    }, 
+    "include": [
+        "./app.ts"
+    ],
+    "files": [
+        "main.ts"
+    ]
+}
