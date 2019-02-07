@@ -2,7 +2,8 @@ var csInterface = new CSInterface();
 
 // CEP7+ need absolute path, not relative
 var dir = csInterface.getSystemPath(SystemPath.EXTENSION);
-var JSZip = require(dir + "/lib/jszip/dist/jszip.js");
+// var JSZip = require(dir + "/lib/jszip/dist/jszip.js");
+var JSZip = cep_node.require('jszip');
 var zip = new JSZip();
 
 function moduleAvailable(name) 
