@@ -4,92 +4,58 @@ Texture pack extractor & packer
 
 ----------------------------------*/
 'use strict';
-var objCsInterface = new CSInterface( );
-// CEP7+ need absolute path, not relative
-var strDir = objCsInterface.getSystemPath( SystemPath.EXTENSION );
+var objCsInterface = new CSInterface( )
+
+//
 // Required modules
-// const objJSZip = require( strDir + "/lib/jszip/" );
-// const objFS = require( strDir + "/lib/fs-extra/" );
-const objJSZip = cep_node.require('jszip');
-const objFS = cep_node.require('fs-extra');
-const strValidFiletypes = /(.png.mcmeta|.png)$/;
-var objZip = new objJSZip( );
-// Unzipper
-$( function ( )
+//
+// @module     {Node} (7zip-bin)
+// @module     {Node} (node-7z)	<
+//
+var obj7zipNode = require( 'node-7z-forall' )
+
+var objModZip = new obj7zipNode( );
+getAllMethods( objModZip )
+// const strPathTo7zip = obj7zipBin.path7za
+// console.log( strPathTo7zip );
+console.log( "strPathTo7zip" );
+const strValidFiletypes = /(.png.mcmeta|.png)$/
+
+$( onZipSelect )
+
+function onZipSelect( )
 {
 	$( "#zipfile" ).change( function ( event )
 	{
 		// Closure to capture the file information.
-		function handleFile( objZipData )
-		{
-			objJSZip.loadAsync( objZipData,
-				{
-					createFolders: true
-				} )
-				.then( function ( objZip )
-				{
-					var strPromises = Object.keys( objZip.files ).filter( function ( strFileName )
-					{
-						debugAlert( "NAME: " + strFileName );
-						// Only extract files in assets folder
-						if ( !( /assets/g ).test( strFileName ) )
-						{
-							return false;
-						}
-						// don't consider non image files
-						return strValidFiletypes.test( strFileName.toLowerCase( ) );
-					} ).map( function ( strFileName )
-					{
-						var objFile = objZip.files[ strFileName ];
-						return objFile.async( "blob" ).then( function ( blob )
-						{
-							// strDest = strDir + '/' + strFileName;
-							// objFS.writeFileSync( strDest, blob );
-							// console.log( JSON.stringify( blob, null, 4 ) );
-							// debugAlert( "BLOB: " + blob + " NAME: " + strFileName + URL.createObjectURL( blob ) );
-							return [
-								strFileName, // keep the link between the file name and the content
-								URL.createObjectURL( blob ) // create an url. img.src = URL.createObjectURL(...) will work
-							];
-						} );
-					} );
-					return Promise.all( strPromises );
-				} )
-				.then( function ( result )
-				{
-					debugAlert( "RESULTAT: " + result + typeof ( result ) );
-					console.log( JSON.stringify( result, null, 4 ) );
-					return result.reduce( function ( acc, val )
-					{
-						acc[ val[ 0 ] ] = val[ 1 ];
-						// debugAlert( "acc[val[0]]: " + acc[ val[ 0 ] ] + typeof ( acc[ val[ 0 ] ] ) );
-						// debugAlert( "val[0]: " + val[ 0 ] + typeof ( val[ 0 ] ) );
-						return acc;
-					},
-					{} );
-				} )
-				.then( function ( imgData )
-				{
-					var strDest = null;
-					debugAlert( "imgData " + imgData + typeof ( imgData ) );
-					console.log( JSON.stringify( imgData, null, 4 ) );
-					console.log( imgData );
-					for(var strName in imgData) 
-					{
-						strDest = strDir + '/' + strName;
-						debugAlert("strName: " + strName + " strDest " + strDest);
-						var blobURL = imgData[strName];
-						debugAlert("blobURL: " + blobURL);
-						var content = objFS.readFileSync(blobURL);
-						console.log(content);
-						objFS.writeFileSync(strDest, content);
-						console.log(imgData);
-					}
-				} )
-		}
 		if ( event.target.files[ 0 ].name.endsWith( ".zip" ) )
 		{
 			handleFile( event.target.files[ 0 ] );
 		}
 	} );
-} )
+}
+
+function handleFile( objZipData )
+{
+	const myStream = objModZip.extractFull( 'S:/ExSphax/Testmod.zip', 'S:/OUTPUT/',
+		{
+			wildcards: [ '*.png' ], // extract all text and Markdown files
+			r: true // in each subfolder too
+		} )
+		.progress( function ( files )
+		{
+			console.log( 'Some files are extracted: %s', files );
+			getAllMethods( files )
+		} )
+		.then( function ( )
+		{
+			console.log( 'Extracting done!' );
+			getAllMethods( objZipData )
+		} )
+
+		// On error
+		.catch( function ( err )
+		{
+			console.error( err );
+		} );
+}
