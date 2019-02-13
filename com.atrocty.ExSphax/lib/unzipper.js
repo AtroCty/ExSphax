@@ -5,21 +5,17 @@ Texture pack extractor & packer
 ----------------------------------*/
 'use strict';
 var objCsInterface = new CSInterface( )
+const strDir = objCsInterface.getSystemPath( SystemPath.EXTENSION )
+const strValidFilesPath = "-i@" + strDir + '/lib/' + "valid_files.txt"
 
 //
 // Required modules
 //
-// @module     {Node} (7zip-bin)
-// @module     {Node} (node-7z)	<
+// @module     {Node} (node-7z-forall)
 //
-var obj7zipNode = require( 'node-7z-forall' )
 
+const obj7zipNode = require( 'node-7z-forall' )
 var objModZip = new obj7zipNode( );
-getAllMethods( objModZip )
-// const strPathTo7zip = obj7zipBin.path7za
-// console.log( strPathTo7zip );
-console.log( "strPathTo7zip" );
-const strValidFiletypes = /(.png.mcmeta|.png)$/
 
 $( onZipSelect )
 
@@ -30,22 +26,24 @@ function onZipSelect( )
 		// Closure to capture the file information.
 		if ( event.target.files[ 0 ].name.endsWith( ".zip" ) )
 		{
-			handleFile( event.target.files[ 0 ] );
+			console.log( (window.URL || window.webkitURL).createObjectURL(event.target.files[ 0 ]) )
+			handleFile( (window.URL || window.webkitURL).createObjectURL(event.target.files[ 0 ]) )
 		}
 	} );
 }
 
-function handleFile( objZipData )
+function handleFile( strZipPath )
 {
-	const myStream = objModZip.extractFull( 'S:/ExSphax/Testmod.zip', 'S:/OUTPUT/',
+	const myStream = objModZip.extractFull( strZipPath, 'S:/OUTPUT/',
 		{
-			wildcards: [ '*.png' ], // extract all text and Markdown files
-			r: true // in each subfolder too
+			raw: [ strValidFilesPath ],
+			r: true
 		} )
 		.progress( function ( files )
 		{
 			console.log( 'Some files are extracted: %s', files );
 			getAllMethods( files )
+			console.log( "alle Mtehoden" );
 		} )
 		.then( function ( )
 		{
