@@ -4,9 +4,9 @@ Texture pack extractor & packer
 
 ----------------------------------*/
 'use strict';
-var objCsInterface = new CSInterface( )
-const strDir = objCsInterface.getSystemPath( SystemPath.EXTENSION )
-const strValidFilesPath = "-i@" + strDir + '/lib/' + "valid_files.txt"
+var objCsInterface = new CSInterface( );
+const strDir = objCsInterface.getSystemPath( SystemPath.EXTENSION );
+const strValidFilesPath = "-i@" + strDir + '/lib/' + "valid_files.txt";
 
 //
 // Required modules
@@ -14,21 +14,17 @@ const strValidFilesPath = "-i@" + strDir + '/lib/' + "valid_files.txt"
 // @module     {Node} (node-7z-forall)
 //
 
-const obj7zipNode = require( 'node-7z-forall' )
+const obj7zipNode = require( 'node-7z-forall' );
 var objModZip = new obj7zipNode( );
 
 $( onZipSelect )
 
 function onZipSelect( )
 {
-	$( "#zipfile" ).change( function ( event )
+	$( "#zipfile" ).click( function ( )
 	{
-		// Closure to capture the file information.
-		if ( event.target.files[ 0 ].name.endsWith( ".zip" ) )
-		{
-			console.log( (window.URL || window.webkitURL).createObjectURL(event.target.files[ 0 ]) )
-			handleFile( (window.URL || window.webkitURL).createObjectURL(event.target.files[ 0 ]) )
-		}
+		var result = window.cep.fs.showOpenDialog();
+		handleFile(result.data);
 	} );
 }
 
@@ -42,7 +38,6 @@ function handleFile( strZipPath )
 		.progress( function ( files )
 		{
 			console.log( 'Some files are extracted: %s', files );
-			getAllMethods( files )
 			console.log( "alle Mtehoden" );
 		} )
 		.then( function ( )

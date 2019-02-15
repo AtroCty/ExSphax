@@ -1,39 +1,43 @@
 <!doctype html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<!-- Insert this line above script imports -->
-	<script src="./lib/CSInterface.js"></script>
-	<script src="./lib/JQuery/jquery.js"></script>
-	<script src="./lib/JQuery/jquery-ui-1.9.1.custom.min.js"></script>
-	<script src="./lib/ext.js"></script>
-	<script src="./lib/navbar.js"></script>
-	<script src="./lib/debug.js"></script>
-	<script src="./lib/unzipper.js"></script>
 	
-	
-	<title>ExSphax</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
-	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" media="screen">
+    <meta charset="utf-8">
+    <!-- Insert this line above script imports -->
+    <script src="./lib/CSInterface.js"></script>
+    <script src="./lib/JQuery/jquery.js"></script>
+    <script src="./lib/JQuery/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="./lib/ext.js"></script>
+    <script src="./lib/navbar.js"></script>
+    <script src="./lib/debug.js"></script>
+    <script src="./lib/unzipper.js"></script>
+    <title>ExSphax</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body onLoad="onLoaded()">
-	<div class="topnav">
-		<ul id="buttons">
-			<li><a href="javascript:void(0)" onclick="clickButton(0)" class=""><img src="css/images/icon_new.png"/></a></li>
-			<li><a href="javascript:void(0)" onclick="clickButton(1)" class=""><img src="css/images/icon_save.png"/></a></li>
-			<li><a href="javascript:void(0)" onclick="clickButton(2)" class=""><img src="css/images/icon_texturize.png"/></a></li>
-			<li><a href="javascript:void(0)" onclick="clickButton(3)" class=""><img src="css/images/icon_options.png"/></a></li>
-		</ul>
-		
-		<input type="file" id="zipfile" class="zipfile" name="zipfile" accept=".zip" pattern=".+\.zip$"/>
-		<label for="zipfile">Choose a file</label><br />
-		<textarea id="result" name="result" class="result" readonly="readonly" ></textarea>
-		<!--Debugger-->
-		<div id="debugdialog" title="Dialog-Debug">Debuggin<br /></div>
-		<script>$( "#debugdialog" ).dialog({ autoOpen: true });</script>
-		<!--Debugger-->
-		
-	</div>
+    <div class="topnav">
+        <ul id="buttons">
+            <li><a href="javascript:void(0)" onclick="clickButton(0)" class=""><img src="css/images/icon_new.png" /></a></li>
+            <li><a href="javascript:void(0)" onclick="clickButton(1)" class=""><img src="css/images/icon_save.png" /></a></li>
+            <li><a href="javascript:void(0)" onclick="clickButton(2)" class=""><img src="css/images/icon_texturize.png" /></a></li>
+            <li><a href="javascript:void(0)" onclick="clickButton(3)" class=""><img src="css/images/icon_options.png" /></a></li>
+        </ul>
+        <!-- <input type="file" id="zipfile" class="zipfile" name="zipfile" accept=".zip" pattern=".+\.zip$"/> -->
+        <!-- <label for="zipfile">Choose a file</label><br /> -->
+        <form id="form" name="form" method="post" action="">
+            <input type="button" name="zipfile" id="zipfile" value="Choose a file" />
+        </form>
+        <textarea id="result" name="result" class="result" readonly="readonly"></textarea>
+        <!--Debugger-->
+        <div id="debugdialog" title="Dialog-Debug">Debuggin<br /></div>
+        <script>
+        $("#debugdialog").dialog({ autoOpen: false });
+        </script>
+        <!--Debugger-->
+    </div>
 </body>
+
 </html>
