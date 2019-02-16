@@ -1,8 +1,8 @@
-/*----------------------------------
+/* ----------------------------------
 
 Texture pack extractor & packer
 
-----------------------------------*/
+---------------------------------- */
 'use strict';
 var objCsInterface = new CSInterface( );
 const strDir = objCsInterface.getSystemPath( SystemPath.EXTENSION );
