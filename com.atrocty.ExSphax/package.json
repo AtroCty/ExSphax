@@ -5,7 +5,8 @@
         "node-7z-forall": "^1.0.0"
     },
     "devDependencies": {
-        "eslint": "^5.14.0"
+        "eslint": "^5.14.0",
+        "clang-format": "^1.2.4"
     },
     "author": "AtroCty",
     "license": "MIT"

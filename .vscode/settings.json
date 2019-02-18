@@ -1,0 +1,7 @@
+{
+    "files.autoSave": "afterDelay",
+    "team.appInsights.enabled": false,
+    "npm.enableScriptExplorer": true,
+    "npm-intellisense.importES6": false,
+    "clang-format.executable": "${workspaceRoot}/com.atrocty.ExSphax/node_modules/.bin/clang-format",
+}
