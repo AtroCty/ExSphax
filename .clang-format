@@ -1,0 +1,27 @@
+BasedOnStyle: Chromium
+IndentWidth: 4
+BreakBeforeBraces: Allman
+ColumnLimit: 0
+SortIncludes: true
+AlignAfterOpenBracket: DontAlign
+AlignConsecutiveAssignments: true
+AlwaysBreakBeforeMultilineStrings: false
+BinPackArguments: true
+BinPackParameters: true
+IndentCaseLabels: false
+AllowShortIfStatementsOnASingleLine: false
+AllowAllParametersOfDeclarationOnNextLine: true
+UseTab: Never
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: false
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterStruct: true
+  BeforeElse: true
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+JavaScriptQuotes: Double
+

@@ -4,4 +4,7 @@
     "npm.enableScriptExplorer": true,
     "npm-intellisense.importES6": false,
     "clang-format.executable": "${workspaceRoot}/com.atrocty.ExSphax/node_modules/.bin/clang-format",
+    "clang-format.language.java.enable": true,
+    "clang-format.language.javascript.enable": true,
+    "clang-format.language.typescript.enable": true,
 }
