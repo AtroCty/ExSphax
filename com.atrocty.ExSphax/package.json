@@ -1,0 +1,12 @@
+{
+    "name": "exsphax",
+    "version": "1.0.0",
+    "dependencies": {
+        "node-7z-forall": "^1.0.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.14.0"
+    },
+    "author": "AtroCty",
+    "license": "MIT"
+}
