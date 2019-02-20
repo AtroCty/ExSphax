@@ -15,8 +15,7 @@
  * Stores constants for the window types supported by the CSXS infrastructure.
  */
 function CSXSWindowType()
-{
-}
+{}
 /** Constant for the CSXS window type Panel. */
 CSXSWindowType._PANEL = "Panel";
 /** Constant for the CSXS window type Modeless. */
@@ -40,9 +39,9 @@ EvalScript_ErrMessage = "EvalScript error.";
  */
 function Version(major, minor, micro, special)
 {
-    this.major   = major;
-    this.minor   = minor;
-    this.micro   = micro;
+    this.major = major;
+    this.minor = minor;
+    this.micro = micro;
     this.special = special;
 }
 /**
@@ -62,7 +61,7 @@ Version.MAX_NUM = 999999999;
  */
 function VersionBound(version, inclusive)
 {
-    this.version   = version;
+    this.version = version;
     this.inclusive = inclusive;
 }
 /**
@@ -92,7 +91,7 @@ function VersionRange(lowerBound, upperBound)
  */
 function Runtime(name, versionRange)
 {
-    this.name         = name;
+    this.name = name;
     this.versionRange = versionRange;
 }
 /**
@@ -120,24 +119,24 @@ function Runtime(name, versionRange)
 * @return A new \c Extension object.
 */
 function Extension(id, name, mainPath, basePath, windowType, width, height, minWidth, minHeight, maxWidth, maxHeight,
-  defaultExtensionDataXml, specialExtensionDataXml, requiredRuntimeList, isAutoVisible, isPluginExtension)
+    defaultExtensionDataXml, specialExtensionDataXml, requiredRuntimeList, isAutoVisible, isPluginExtension)
 {
-    this.id                      = id;
-    this.name                    = name;
-    this.mainPath                = mainPath;
-    this.basePath                = basePath;
-    this.windowType              = windowType;
-    this.width                   = width;
-    this.height                  = height;
-    this.minWidth                = minWidth;
-    this.minHeight               = minHeight;
-    this.maxWidth                = maxWidth;
-    this.maxHeight               = maxHeight;
+    this.id = id;
+    this.name = name;
+    this.mainPath = mainPath;
+    this.basePath = basePath;
+    this.windowType = windowType;
+    this.width = width;
+    this.height = height;
+    this.minWidth = minWidth;
+    this.minHeight = minHeight;
+    this.maxWidth = maxWidth;
+    this.maxHeight = maxHeight;
     this.defaultExtensionDataXml = defaultExtensionDataXml;
     this.specialExtensionDataXml = specialExtensionDataXml;
-    this.requiredRuntimeList     = requiredRuntimeList;
-    this.isAutoVisible           = isAutoVisible;
-    this.isPluginExtension       = isPluginExtension;
+    this.requiredRuntimeList = requiredRuntimeList;
+    this.isAutoVisible = isAutoVisible;
+    this.isPluginExtension = isPluginExtension;
 }
 /**
  * @class CSEvent
@@ -152,9 +151,9 @@ function Extension(id, name, mainPath, basePath, windowType, width, height, minW
  */
 function CSEvent(type, scope, appId, extensionId)
 {
-    this.type        = type;
-    this.scope       = scope;
-    this.appId       = appId;
+    this.type = type;
+    this.scope = scope;
+    this.appId = appId;
     this.extensionId = extensionId;
 }
 /** Event-specific data. */
@@ -166,8 +165,7 @@ CSEvent.prototype.data = "";
  * @return A new \c SystemPath object.
  */
 function SystemPath()
-{
-}
+{}
 /** The path to user data.	*/
 SystemPath.USER_DATA = "userData";
 /** The path to common files for Adobe applications.	*/
@@ -185,8 +183,7 @@ SystemPath.HOST_APPLICATION = "hostApplication";
  * Stores color-type constants.
  */
 function ColorType()
-{
-}
+{}
 /** RGB color type. */
 ColorType.RGB = "rgb";
 /** Gradient color type. */
@@ -209,9 +206,9 @@ ColorType.NONE = "none";
  */
 function RGBColor(red, green, blue, alpha)
 {
-    this.red   = red;
+    this.red = red;
     this.green = green;
-    this.blue  = blue;
+    this.blue = blue;
     this.alpha = alpha;
 }
 /**
@@ -242,7 +239,7 @@ function Direction(x, y)
  */
 function GradientStop(offset, rgbColor)
 {
-    this.offset   = offset;
+    this.offset = offset;
     this.rgbColor = rgbColor;
 }
 /**
@@ -259,9 +256,9 @@ function GradientStop(offset, rgbColor)
  */
 function GradientColor(type, direction, numStops, arrGradientStop)
 {
-    this.type            = type;
-    this.direction       = direction;
-    this.numStops        = numStops;
+    this.type = type;
+    this.direction = direction;
+    this.numStops = numStops;
     this.arrGradientStop = arrGradientStop;
 }
 /**
@@ -278,9 +275,9 @@ function GradientColor(type, direction, numStops, arrGradientStop)
  */
 function UIColor(type, antialiasLevel, color)
 {
-    this.type           = type;
+    this.type = type;
     this.antialiasLevel = antialiasLevel;
-    this.color          = color;
+    this.color = color;
 }
 /**
  * @class AppSkinInfo
@@ -298,13 +295,13 @@ function UIColor(type, antialiasLevel, color)
  */
 function AppSkinInfo(baseFontFamily, baseFontSize, appBarBackgroundColor, panelBackgroundColor, appBarBackgroundColorSRGB, panelBackgroundColorSRGB, systemHighlightColor)
 {
-    this.baseFontFamily            = baseFontFamily;
-    this.baseFontSize              = baseFontSize;
-    this.appBarBackgroundColor     = appBarBackgroundColor;
-    this.panelBackgroundColor      = panelBackgroundColor;
+    this.baseFontFamily = baseFontFamily;
+    this.baseFontSize = baseFontSize;
+    this.appBarBackgroundColor = appBarBackgroundColor;
+    this.panelBackgroundColor = panelBackgroundColor;
     this.appBarBackgroundColorSRGB = appBarBackgroundColorSRGB;
-    this.panelBackgroundColorSRGB  = panelBackgroundColorSRGB;
-    this.systemHighlightColor      = systemHighlightColor;
+    this.panelBackgroundColorSRGB = panelBackgroundColorSRGB;
+    this.systemHighlightColor = systemHighlightColor;
 }
 /**
  * @class HostEnvironment
@@ -322,11 +319,11 @@ function AppSkinInfo(baseFontFamily, baseFontSize, appBarBackgroundColor, panelB
  */
 function HostEnvironment(appName, appVersion, appLocale, appUILocale, appId, isAppOnline, appSkinInfo)
 {
-    this.appName     = appName;
-    this.appVersion  = appVersion;
-    this.appLocale   = appLocale;
+    this.appName = appName;
+    this.appVersion = appVersion;
+    this.appLocale = appLocale;
     this.appUILocale = appUILocale;
-    this.appId       = appId;
+    this.appId = appId;
     this.isAppOnline = isAppOnline;
     this.appSkinInfo = appSkinInfo;
 }
@@ -344,10 +341,10 @@ function HostEnvironment(appName, appVersion, appLocale, appUILocale, appId, isA
  */
 function HostCapabilities(EXTENDED_PANEL_MENU, EXTENDED_PANEL_ICONS, DELEGATE_APE_ENGINE, SUPPORT_HTML_EXTENSIONS, DISABLE_FLASH_EXTENSIONS)
 {
-    this.EXTENDED_PANEL_MENU      = EXTENDED_PANEL_MENU;
-    this.EXTENDED_PANEL_ICONS     = EXTENDED_PANEL_ICONS;
-    this.DELEGATE_APE_ENGINE      = DELEGATE_APE_ENGINE;
-    this.SUPPORT_HTML_EXTENSIONS  = SUPPORT_HTML_EXTENSIONS;
+    this.EXTENDED_PANEL_MENU = EXTENDED_PANEL_MENU;
+    this.EXTENDED_PANEL_ICONS = EXTENDED_PANEL_ICONS;
+    this.DELEGATE_APE_ENGINE = DELEGATE_APE_ENGINE;
+    this.SUPPORT_HTML_EXTENSIONS = SUPPORT_HTML_EXTENSIONS;
     this.DISABLE_FLASH_EXTENSIONS = DISABLE_FLASH_EXTENSIONS; // Since 5.0.0
 }
 /**
@@ -383,8 +380,8 @@ function ApiVersion(major, minor, micro)
 function MenuItemStatus(menuItemLabel, enabled, checked)
 {
     this.menuItemLabel = menuItemLabel;
-    this.enabled       = enabled;
-    this.checked       = checked;
+    this.enabled = enabled;
+    this.checked = checked;
 }
 /**
  * @class ContextMenuItemStatus
@@ -401,8 +398,8 @@ function MenuItemStatus(menuItemLabel, enabled, checked)
 function ContextMenuItemStatus(menuItemID, enabled, checked)
 {
     this.menuItemID = menuItemID;
-    this.enabled    = enabled;
-    this.checked    = checked;
+    this.enabled = enabled;
+    this.checked = checked;
 }
 //------------------------------ CSInterface ----------------------------------
 /**
@@ -418,8 +415,7 @@ function ContextMenuItemStatus(menuItemID, enabled, checked)
  * @return A new \c CSInterface object
  */
 function CSInterface()
-{
-}
+{}
 /**
  * User can add this event listener to handle native application theme color changes.
  * Callback function gives extensions ability to fine-tune their theme color after the
@@ -444,12 +440,14 @@ CSInterface.prototype.hostEnvironment = JSON.parse(window.__adobe_cep__.getHostE
  *
  *	 @return A \c #HostEnvironment object.
  */
-CSInterface.prototype.getHostEnvironment = function() {
+CSInterface.prototype.getHostEnvironment = function()
+{
     this.hostEnvironment = JSON.parse(window.__adobe_cep__.getHostEnvironment());
     return this.hostEnvironment;
 };
 /** Closes this extension. */
-CSInterface.prototype.closeExtension = function() {
+CSInterface.prototype.closeExtension = function()
+{
     window.__adobe_cep__.closeExtension();
 };
 /**
@@ -459,8 +457,9 @@ CSInterface.prototype.closeExtension = function() {
  *
  * @return The platform-specific system path string.
  */
-CSInterface.prototype.getSystemPath = function(pathType) {
-    var path      = decodeURI(window.__adobe_cep__.getSystemPath(pathType));
+CSInterface.prototype.getSystemPath = function(pathType)
+{
+    var path = decodeURI(window.__adobe_cep__.getSystemPath(pathType));
     var OSVersion = this.getOSInformation();
     if (OSVersion.indexOf("Windows") >= 0)
     {
@@ -480,7 +479,8 @@ CSInterface.prototype.getSystemPath = function(pathType) {
  * @param callback	Optional. A callback function that receives the result of execution.
  *					If execution fails, the callback function receives the error message \c EvalScript_ErrMessage.
  */
-CSInterface.prototype.evalScript = function(script, callback) {
+CSInterface.prototype.evalScript = function(script, callback)
+{
     if (callback === null || callback === undefined)
     {
         callback = function(result) {};
@@ -493,7 +493,8 @@ CSInterface.prototype.evalScript = function(script, callback) {
  *
  * @return The unique ID string.
  */
-CSInterface.prototype.getApplicationID = function() {
+CSInterface.prototype.getApplicationID = function()
+{
     var appId = this.hostEnvironment.appId;
     return appId;
 };
@@ -503,7 +504,8 @@ CSInterface.prototype.getApplicationID = function() {
  *
  * @return A \c #HostCapabilities object.
  */
-CSInterface.prototype.getHostCapabilities = function() {
+CSInterface.prototype.getHostCapabilities = function()
+{
     var hostCapabilities = JSON.parse(window.__adobe_cep__.getHostCapabilities());
     return hostCapabilities;
 };
@@ -513,7 +515,8 @@ CSInterface.prototype.getHostCapabilities = function() {
  *
  * @param event A \c CSEvent object.
  */
-CSInterface.prototype.dispatchEvent = function(event) {
+CSInterface.prototype.dispatchEvent = function(event)
+{
     if (typeof event.data == "object")
     {
         event.data = JSON.stringify(event.data);
@@ -531,7 +534,8 @@ CSInterface.prototype.dispatchEvent = function(event) {
  * @param obj			Optional, the object containing the handler method, if any.
  *				 Default is null.
  */
-CSInterface.prototype.addEventListener = function(type, listener, obj) {
+CSInterface.prototype.addEventListener = function(type, listener, obj)
+{
     window.__adobe_cep__.addEventListener(type, listener, obj);
 };
 /**
@@ -542,7 +546,8 @@ CSInterface.prototype.addEventListener = function(type, listener, obj) {
  * @param obj			 Optional, the object containing the handler method, if any.
  *					Default is null.
  */
-CSInterface.prototype.removeEventListener = function(type, listener, obj) {
+CSInterface.prototype.removeEventListener = function(type, listener, obj)
+{
     window.__adobe_cep__.removeEventListener(type, listener, obj);
 };
 /**
@@ -556,7 +561,8 @@ CSInterface.prototype.removeEventListener = function(type, listener, obj) {
  * <code>requestOpenExtension("HLP", ""); </code>
  *
  */
-CSInterface.prototype.requestOpenExtension = function(extensionId, params) {
+CSInterface.prototype.requestOpenExtension = function(extensionId, params)
+{
     window.__adobe_cep__.requestOpenExtension(extensionId, params);
 };
 /**
@@ -569,10 +575,11 @@ CSInterface.prototype.requestOpenExtension = function(extensionId, params) {
  *
  * @return Zero or more \c #Extension objects.
  */
-CSInterface.prototype.getExtensions = function(extensionIds) {
+CSInterface.prototype.getExtensions = function(extensionIds)
+{
     var extensionIdsStr = JSON.stringify(extensionIds);
-    var extensionsStr   = window.__adobe_cep__.getExtensions(extensionIdsStr);
-    var extensions      = JSON.parse(extensionsStr);
+    var extensionsStr = window.__adobe_cep__.getExtensions(extensionIdsStr);
+    var extensions = JSON.parse(extensionsStr);
     return extensions;
 };
 /**
@@ -580,8 +587,9 @@ CSInterface.prototype.getExtensions = function(extensionIds) {
  *
  * @return A JavaScript object containing network preferences.
  */
-CSInterface.prototype.getNetworkPreferences = function() {
-    var result     = window.__adobe_cep__.getNetworkPreferences();
+CSInterface.prototype.getNetworkPreferences = function()
+{
+    var result = window.__adobe_cep__.getNetworkPreferences();
     var networkPre = JSON.parse(result);
     return networkPre;
 };
@@ -601,9 +609,10 @@ CSInterface.prototype.getNetworkPreferences = function() {
  *
  * @return An object containing the resource bundle information.
  */
-CSInterface.prototype.initResourceBundle = function() {
+CSInterface.prototype.initResourceBundle = function()
+{
     var resourceBundle = JSON.parse(window.__adobe_cep__.initResourceBundle());
-    var resElms        = document.querySelectorAll("[data-locale]");
+    var resElms = document.querySelectorAll("[data-locale]");
     for (var n = 0; n < resElms.length; n++)
     {
         var resEl = resElms[n];
@@ -623,7 +632,7 @@ CSInterface.prototype.initResourceBundle = function() {
                     }
                     else if ("." == key.charAt(resKey.length))
                     {
-                        var attrKey    = key.substring(resKey.length + 1);
+                        var attrKey = key.substring(resKey.length + 1);
                         resEl[attrKey] = resValue;
                     }
                 }
@@ -637,7 +646,8 @@ CSInterface.prototype.initResourceBundle = function() {
  *
  * @return The file path.
  */
-CSInterface.prototype.dumpInstallationInfo = function() {
+CSInterface.prototype.dumpInstallationInfo = function()
+{
     return window.__adobe_cep__.dumpInstallationInfo();
 };
 /**
@@ -648,12 +658,13 @@ CSInterface.prototype.dumpInstallationInfo = function() {
  * If user customizes the User Agent by setting CEF command parameter "--user-agent", only
  * "Mac OS X" or "Windows" will be returned. 
  */
-CSInterface.prototype.getOSInformation = function() {
+CSInterface.prototype.getOSInformation = function()
+{
     var userAgent = navigator.userAgent;
     if ((navigator.platform == "Win32") || (navigator.platform == "Windows"))
     {
         var winVersion = "Windows";
-        var winBit     = "";
+        var winBit = "";
         if (userAgent.indexOf("Windows") > -1)
         {
             if (userAgent.indexOf("Windows NT 5.0") > -1)
@@ -731,7 +742,8 @@ CSInterface.prototype.getOSInformation = function() {
  *					<li>ERR_INVALID_URL - 201</li>\n
  *			</ul>\n
  */
-CSInterface.prototype.openURLInDefaultBrowser = function(url) {
+CSInterface.prototype.openURLInDefaultBrowser = function(url)
+{
     return cep.util.openURLInDefaultBrowser(url);
 };
 /**
@@ -741,7 +753,8 @@ CSInterface.prototype.openURLInDefaultBrowser = function(url) {
  *
  * @return extension ID.
  */
-CSInterface.prototype.getExtensionID = function() {
+CSInterface.prototype.getExtensionID = function()
+{
     return window.__adobe_cep__.getExtensionId();
 };
 /**
@@ -758,7 +771,8 @@ CSInterface.prototype.getExtensionID = function() {
  *					<li> >1.0 means HiDPI screen </li>\n
  *			</ul>\n
  */
-CSInterface.prototype.getScaleFactor = function() {
+CSInterface.prototype.getScaleFactor = function()
+{
     return window.__adobe_cep__.getScaleFactor();
 };
 /**
@@ -769,7 +783,8 @@ CSInterface.prototype.getScaleFactor = function() {
  * @param handler	 The function to be called when scale factor is changed.
  *
  */
-CSInterface.prototype.setScaleFactorChangedHandler = function(handler) {
+CSInterface.prototype.setScaleFactorChangedHandler = function(handler)
+{
     window.__adobe_cep__.setScaleFactorChangedHandler(handler);
 };
 /**
@@ -780,7 +795,8 @@ CSInterface.prototype.setScaleFactorChangedHandler = function(handler) {
  * @return ApiVersion object.
  *
  */
-CSInterface.prototype.getCurrentApiVersion = function() {
+CSInterface.prototype.getCurrentApiVersion = function()
+{
     var apiVersion = JSON.parse(window.__adobe_cep__.getCurrentApiVersion());
     return apiVersion;
 };
@@ -811,7 +827,8 @@ CSInterface.prototype.getCurrentApiVersion = function() {
  * </Menu>
  *
  */
-CSInterface.prototype.setPanelFlyoutMenu = function(menu) {
+CSInterface.prototype.setPanelFlyoutMenu = function(menu)
+{
     if ("string" != typeof menu)
     {
         return;
@@ -833,13 +850,14 @@ CSInterface.prototype.setPanelFlyoutMenu = function(menu) {
  *
  * @see HostCapabilities.EXTENDED_PANEL_MENU
  */
-CSInterface.prototype.updatePanelMenuItem = function(menuItemLabel, enabled, checked) {
+CSInterface.prototype.updatePanelMenuItem = function(menuItemLabel, enabled, checked)
+{
     var ret = false;
     if (this.getHostCapabilities()
-          .EXTENDED_PANEL_MENU)
+        .EXTENDED_PANEL_MENU)
     {
         var itemStatus = new MenuItemStatus(menuItemLabel, enabled, checked);
-        ret            = window.__adobe_cep__.invokeSync("updatePanelMenuItem", JSON.stringify(itemStatus));
+        ret = window.__adobe_cep__.invokeSync("updatePanelMenuItem", JSON.stringify(itemStatus));
     }
     return ret;
 };
@@ -873,7 +891,8 @@ CSInterface.prototype.updatePanelMenuItem = function(menuItemLabel, enabled, che
  *	 <MenuItem Id="menuItemId3" Label="TestExample3" Enabled="false" Checkable="true" Checked="false"/>
  * </Menu>
  */
-CSInterface.prototype.setContextMenu = function(menu, callback) {
+CSInterface.prototype.setContextMenu = function(menu, callback)
+{
     if ("string" != typeof menu)
     {
         return;
@@ -949,7 +968,8 @@ CSInterface.prototype.setContextMenu = function(menu, callback) {
  *	}
  *
  */
-CSInterface.prototype.setContextMenuByJSON = function(menu, callback) {
+CSInterface.prototype.setContextMenuByJSON = function(menu, callback)
+{
     if ("string" != typeof menu)
     {
         return;
@@ -965,9 +985,10 @@ CSInterface.prototype.setContextMenuByJSON = function(menu, callback) {
  * @param enabled		True to enable the item, false to disable it (gray it out).
  * @param checked		True to select the item, false to deselect it.
  */
-CSInterface.prototype.updateContextMenuItem = function(menuItemID, enabled, checked) {
+CSInterface.prototype.updateContextMenuItem = function(menuItemID, enabled, checked)
+{
     var itemStatus = new ContextMenuItemStatus(menuItemID, enabled, checked);
-    ret            = window.__adobe_cep__.invokeSync("updateContextMenuItem", JSON.stringify(itemStatus));
+    ret = window.__adobe_cep__.invokeSync("updateContextMenuItem", JSON.stringify(itemStatus));
 };
 /**
  * Get the visibility status of an extension window. 
@@ -976,7 +997,8 @@ CSInterface.prototype.updateContextMenuItem = function(menuItemID, enabled, chec
  *
  * @return true if the extension window is visible; false if the extension window is hidden.
  */
-CSInterface.prototype.isWindowVisible = function() {
+CSInterface.prototype.isWindowVisible = function()
+{
     return window.__adobe_cep__.invokeSync("isWindowVisible", "");
 };
 /**
@@ -997,7 +1019,8 @@ CSInterface.prototype.isWindowVisible = function() {
  * @param width	The new width
  * @param height The new height
  */
-CSInterface.prototype.resizeContent = function(width, height) {
+CSInterface.prototype.resizeContent = function(width, height)
+{
     window.__adobe_cep__.resizeContent(width, height);
 };
 /**
@@ -1009,7 +1032,8 @@ CSInterface.prototype.resizeContent = function(width, height) {
  *
  * @param callback the callback function
  */
-CSInterface.prototype.registerInvalidCertificateCallback = function(callback) {
+CSInterface.prototype.registerInvalidCertificateCallback = function(callback)
+{
     return window.__adobe_cep__.registerInvalidCertificateCallback(callback);
 };
 /**
@@ -1053,7 +1077,8 @@ CSInterface.prototype.registerInvalidCertificateCallback = function(callback) {
  * ]
  *
  */
-CSInterface.prototype.registerKeyEventsInterest = function(keyEventsInterest) {
+CSInterface.prototype.registerKeyEventsInterest = function(keyEventsInterest)
+{
     return window.__adobe_cep__.registerKeyEventsInterest(keyEventsInterest);
 };
 /**
@@ -1064,7 +1089,8 @@ CSInterface.prototype.registerKeyEventsInterest = function(keyEventsInterest) {
  *
  * @param title The window title.
  */
-CSInterface.prototype.setWindowTitle = function(title) {
+CSInterface.prototype.setWindowTitle = function(title)
+{
     window.__adobe_cep__.invokeSync("setWindowTitle", title);
 };
 /**
@@ -1075,6 +1101,7 @@ CSInterface.prototype.setWindowTitle = function(title) {
  *
  * @return The window title.
  */
-CSInterface.prototype.getWindowTitle = function() {
+CSInterface.prototype.getWindowTitle = function()
+{
     return window.__adobe_cep__.invokeSync("getWindowTitle", "");
 };

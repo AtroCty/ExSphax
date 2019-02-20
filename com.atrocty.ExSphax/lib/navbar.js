@@ -1,7 +1,8 @@
 // Loop through the buttons and add the active class to the current/clicked button
 function clickButton(buttonID)
 {
-    var btns = document.getElementById("buttons").getElementsByTagName("a");
+    var btns = document.getElementById("buttons")
+                 .getElementsByTagName("a");
 
     if (btns[buttonID].className !== "active")
     {
@@ -21,16 +22,19 @@ function clickButton(buttonID)
             //if require and process is available, it should be mixed context
             if ((typeof (require) !== "undefined") && (typeof (process) !== "undefined"))
             {
-                $("#result2").val("Node.js is enabled with mixed-context mode");
+                $("#result2")
+                  .val("Node.js is enabled with mixed-context mode");
             }
             elsezz
             {
-                $("#result2").val("Node.js is enabled");
+                $("#result2")
+                  .val("Node.js is enabled");
             }
         }
         else
         {
-            $("#result2").val("Node.js is disabled");
+            $("#result2")
+              .val("Node.js is disabled");
         }
     }
 
