@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Photoshop",
+            "port": 8088,
+            "webRoot": "${workspaceRoot}/com.atrocty.ExSphax/index.html",
+            "sourceMapPathOverrides":
+            {
+                "webpack:///*": "${workspaceRoot}/*"
+            }
+        }
+    ]
+}
