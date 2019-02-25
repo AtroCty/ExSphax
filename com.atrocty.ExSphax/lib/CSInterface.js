@@ -14,8 +14,7 @@
 /**
  * Stores constants for the window types supported by the CSXS infrastructure.
  */
-function CSXSWindowType()
-{}
+function CSXSWindowType() {}
 /** Constant for the CSXS window type Panel. */
 CSXSWindowType._PANEL = "Panel";
 /** Constant for the CSXS window type Modeless. */
@@ -164,8 +163,7 @@ CSEvent.prototype.data = "";
  * \c #CSInterface.getSystemPath() method.
  * @return A new \c SystemPath object.
  */
-function SystemPath()
-{}
+function SystemPath() {}
 /** The path to user data.	*/
 SystemPath.USER_DATA = "userData";
 /** The path to common files for Adobe applications.	*/
@@ -182,8 +180,7 @@ SystemPath.HOST_APPLICATION = "hostApplication";
  * @class ColorType
  * Stores color-type constants.
  */
-function ColorType()
-{}
+function ColorType() {}
 /** RGB color type. */
 ColorType.RGB = "rgb";
 /** Gradient color type. */
@@ -414,8 +411,7 @@ function ContextMenuItemStatus(menuItemID, enabled, checked)
  *
  * @return A new \c CSInterface object
  */
-function CSInterface()
-{}
+function CSInterface() {}
 /**
  * User can add this event listener to handle native application theme color changes.
  * Callback function gives extensions ability to fine-tune their theme color after the

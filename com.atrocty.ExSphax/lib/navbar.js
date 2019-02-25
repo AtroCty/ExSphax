@@ -2,7 +2,7 @@
 function clickButton(buttonID)
 {
     var btns = document.getElementById("buttons")
-                 .getElementsByTagName("a");
+        .getElementsByTagName("a");
 
     if (btns[buttonID].className !== "active")
     {
@@ -17,24 +17,24 @@ function clickButton(buttonID)
 
     if (buttonID === 3)
     {
-        if (typeof (cep_node) !== "undefined")
+        if (typeof(cep_node) !== "undefined")
         {
             //if require and process is available, it should be mixed context
-            if ((typeof (require) !== "undefined") && (typeof (process) !== "undefined"))
+            if ((typeof(require) !== "undefined") && (typeof(process) !== "undefined"))
             {
                 $("#result2")
-                  .val("Node.js is enabled with mixed-context mode");
+                    .val("Node.js is enabled with mixed-context mode");
             }
-            elsezz
+            else
             {
                 $("#result2")
-                  .val("Node.js is enabled");
+                    .val("Node.js is enabled");
             }
         }
         else
         {
             $("#result2")
-              .val("Node.js is disabled");
+                .val("Node.js is disabled");
         }
     }
 
