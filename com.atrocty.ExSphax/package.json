@@ -5,9 +5,9 @@
         "node-7z-forall": "^1.0.0"
     },
     "devDependencies": {
-        "eslint": "^5.14.0",
-        "clang-format": "^1.2.4",
         "@types/node": "^0.12.4",
+        "clang-format": "^1.2.4",
+        "eslint": "^5.14.1",
         "typescript": "^2.3.3"
     },
     "author": "AtroCty",
